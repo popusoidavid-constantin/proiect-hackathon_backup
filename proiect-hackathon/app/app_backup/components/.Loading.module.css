@@ -1,0 +1,69 @@
+.fullscreen {
+    position: fixed;
+    inset: 0;
+    background: white; /* sau #f9fafb pentru light grey */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999; /* peste tot */
+  }
+
+  /* Spinner circle */
+  .spinner {
+    --size: 100px;
+    --thickness: 10px;
+    --accent: #2563eb;
+
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    position: relative;
+    box-sizing: border-box;
+
+    background: conic-gradient(var(--accent) 0deg, transparent 120deg);
+    mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - var(--thickness)),
+      black calc(100% - var(--thickness))
+    );
+    -webkit-mask: radial-gradient(
+      farthest-side,
+      transparent calc(100% - var(--thickness)),
+      black calc(100% - var(--thickness))
+    );
+
+    animation: spin 1s linear infinite;
+  }
+
+  .spinner::after {
+    content: "";
+    position: absolute;
+    inset: 12%;
+    border-radius: 50%;
+    background: transparent;
+  }
+
+  /* Extra large spinner */
+  .xlarge {
+    --size: 120px;
+    --thickness: 12px;
+  }
+
+  /* Screen reader text */
+  .srOnly {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }

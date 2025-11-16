@@ -1,0 +1,27 @@
+.card {
+    border-radius: 12px;
+    border: 1px solid #d1d5db; /* border */
+    background-color: #f9fafb; /* card bg */
+    color: #111827; /* card foreground */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  .cardHeader {
+    display: flex;
+    flex-direction: column;
+    gap: 6px; /* space-y-1.5 */
+    padding: 24px; /* p-6 */
+  }
+
+  .cardTitle {
+    font-size: 1.5rem; /* text-2xl */
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    margin: 0;
+  }
+
+  .cardContent {
+    padding: 24px;
+    padding-top: 0; /* pt-0 */
+  }

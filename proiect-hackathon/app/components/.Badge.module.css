@@ -1,0 +1,31 @@
+.badge {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 9999px; /* fully rounded */
+    padding: 0.125rem 0.625rem; /* py-0.5 px-2.5 */
+    font-size: 0.75rem; /* text-xs */
+    font-weight: 600;
+    transition: background-color 0.2s, color 0.2s;
+  }
+
+  /* Variants */
+  .default {
+    background-color: #3b82f6; /* bg-primary */
+    color: #ffffff; /* text-primary-foreground */
+  }
+
+  .secondary {
+    background-color: #6b7280; /* bg-secondary */
+    color: #ffffff; /* text-secondary-foreground */
+  }
+
+  .destructive {
+    background-color: #ef4444; /* bg-destructive */
+    color: #ffffff; /* text-destructive-foreground */
+  }
+
+  .outline {
+    background-color: #ffffff; /* bg-background */
+    border: 1px solid #d1d5db; /* border-input */
+    color: #111827;
+  }

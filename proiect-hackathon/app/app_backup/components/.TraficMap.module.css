@@ -1,0 +1,159 @@
+.card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cardContent {
+    flex: 1;
+    padding: 0;
+    position: relative;
+  }
+
+  .mapContainer {
+    position: absolute;
+    inset: 0;
+    background-color: #e0e0e0; /* muted background */
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+  }
+
+  .mapGrid {
+    position: absolute;
+    inset: 0;
+    opacity: 0.1;
+    background-image:
+      linear-gradient(90deg, #ccc 1px, transparent 1px),
+      linear-gradient(180deg, #ccc 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .mapHeader {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+  }
+
+  .mapInfo {
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(6px);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+
+  .mapInfo h3 {
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .mapInfo p {
+    font-size: 0.75rem;
+    margin: 0;
+    color: #555;
+  }
+
+  .mapControls {
+    display: flex;
+    gap: 8px;
+  }
+
+  .mapPinWrapper {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+  }
+
+  .ping {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    animation: ping 1s infinite;
+  }
+
+  @keyframes ping {
+    0% { transform: scale(1); opacity: 0.5; }
+    75%, 100% { transform: scale(2); opacity: 0; }
+  }
+
+  .normalPing { background-color: rgba(0, 200, 0, 0.3); }
+  .warningPing { background-color: rgba(255, 165, 0, 0.3); }
+  .criticalPing { background-color: rgba(255, 0, 0, 0.3); }
+
+  .pin {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
+  }
+
+  .pin:hover {
+    transform: scale(1.25);
+  }
+
+  .normalPin { background-color: #00c800; border-color: #00c800; color: #fff; }
+  .warningPin { background-color: #ffa500; border-color: #ffa500; color: #fff; }
+  .criticalPin { background-color: #ff0000; border-color: #ff0000; color: #fff; }
+
+  .tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 8px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(6px);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+
+  .mapPinWrapper:hover .tooltip {
+    opacity: 1;
+  }
+
+  .legend {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(6px);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  }
+
+  .legend p {
+    margin: 0 0 4px 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+  }
+
+  .legendItem {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+  }
+
+  .normalDot { width: 12px; height: 12px; border-radius: 50%; background-color: #00c800; }
+  .warningDot { width: 12px; height: 12px; border-radius: 50%; background-color: #ffa500; }
+  .criticalDot { width: 12px; height: 12px; border-radius: 50%; background-color: #ff0000; }
